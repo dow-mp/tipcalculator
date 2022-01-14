@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Tip calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+<h1>Splitter</h1>
+
+<form action="#">
+  <fieldset>
+  <label for="total">
+    <span>Bill</span><br>
+    <input type="text" name="total" id="total" placeholder="$">
+  </label>
+
+  <fieldset>
+    <label for="select-tip">
+      <span>Select Tip %</span>
+    </label>
+    <input type="button" name="tip-percent" id="5percent" value="5%">
+    <input type="button" name="tip-percent" id="10percent" value="10%">
+    <input type="button" name="tip-percent" id="15percent" value="15%">
+    <input type="button" name="tip-percent" id="25percent" value="25%">
+    <input type="button" name="tip-percent" id="50percent" value="50%">
+    <input type="text" name="tip-percent" id="5percent" placeholder="Custom">
+  </fieldset>
+
+  <label for="number-people">
+    <span>Number of People</span>
+    <input type="text" name="number-people" id="number-people">
+  </label>  
+</fieldset>
+
+<fieldset>
+<label for="tip-amount">
+  <span>Tip Amount <br> / person</span>
+</label> <br>
+
+<label for="total-amount">
+  <span>Total <br> / person</span>
+</label>
+<output name="tip-each"></output>
+<output name="total-each"></output>
+<br>
+<label for="reset">
+  <input type="button" name="reset" id="reset" value="Reset">
+</label>
+
+</fieldset>
+
+
+  
+  </form>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Dow-mp</a>.
+  </div>
+</body>
+</html>
