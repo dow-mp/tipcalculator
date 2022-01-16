@@ -12,7 +12,9 @@
   <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
+    <link 
   </style>
+  <script src="tipcalc.js" async></script>
 </head>
 <body>
 <h1>Splitter</h1>
@@ -21,7 +23,7 @@
   <fieldset>
   <label for="total">
     <span>Bill</span><br>
-    <input type="text" name="total" id="total" placeholder="$">
+    <input type="text" name="total-bill" id="total-bill" placeholder="$">
   </label>
 
   <fieldset>
@@ -33,13 +35,15 @@
     <input type="button" name="tip-percent" id="15percent" value="15%">
     <input type="button" name="tip-percent" id="25percent" value="25%">
     <input type="button" name="tip-percent" id="50percent" value="50%">
-    <input type="text" name="tip-percent" id="5percent" placeholder="Custom">
+    <input type="text" name="tip-percent" id="custom-percent" placeholder="Custom">
   </fieldset>
 
   <label for="number-people">
     <span>Number of People</span>
     <input type="text" name="number-people" id="number-people">
   </label>  
+
+  <input type="submit" name="submit" id="submit" value="Calculate">
 </fieldset>
 
 <fieldset>
@@ -50,11 +54,11 @@
 <label for="total-amount">
   <span>Total <br> / person</span>
 </label>
-<output name="tip-each"></output>
-<output name="total-each"></output>
+<output name="tip-each" id="tip-each"></output>
+<output name="total-each" id="total-each"></output>
 <br>
 <label for="reset">
-  <input type="button" name="reset" id="reset" value="Reset">
+  <input type="reset" name="reset" id="reset" value="Reset">
 </label>
 
 </fieldset>
