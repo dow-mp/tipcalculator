@@ -8,6 +8,77 @@ const fiftyPercent = document.getElementById("50percent");
 const customPercent = document.getElementById("custom-percent");
 const numPeople = document.getElementById("number-people");
 
+const submitButton = document.getElementById("submit");
+const percentButtons = document.querySelectorAll(".button");
+
+//ATTEMPT TO CHANGE STYLE OF SELECTED PERCENT BUTTON
+ function showSelectedPercent() { 
+    //let targ = item; 
+    .style.backgroundColor = "navy";
+    .style.color = "white";
+    .removeEventListener("pointerdown", selectFivePercent)
+};
+
+percentButtons.forEach(item => {item.addEventListener("click", showSelectedPercent)});
+/*percentButtons.forEach(button => {
+    button.addEventListener("click", showSelectedPercent)
+});
+
+/*function selectFivePercent() {
+    fivePercent.style.backgroundColor = "navy";
+    fivePercent.style.color = "white";
+    fivePercent.removeEventListener("pointerdown", selectFivePercent)
+};
+
+function selectTenPercent() {
+    tenPercent.style.backgroundColor = "navy";
+    tenPercent.style.color = "white";
+    tenPercent.removeEventListener("pointerdown", selectTenPercent)
+};
+
+function selectFifteenPercent() {
+    fifteenPercent.style.backgroundColor = "navy";
+    fifteenPercent.style.color = "white";
+    fifteenPercent.removeEventListener("pointerdown", selectFifteenPercent)
+};
+
+function selectTwentyFivePercent() {
+    twentyFivePercent.style.backgroundColor = "navy";
+    twentyFivePercent.style.color = "white";
+    twentyFivePercent.removeEventListener("pointerdown", selectTwentyFivePercent)
+};
+
+function selectFiftyPercent() {
+    fiftyPercent.style.backgroundColor = "navy";
+    fiftyPercent.style.color = "white";
+    fiftyPercent.removeEventListener("pointerdown", selectFiftyPercent)
+};
+
+
+fivePercent.addEventListener("pointerdown", selectFivePercent);
+tenPercent.addEventListener("pointerdown", selectTenPercent);
+fifteenPercent.addEventListener("pointerdown", selectFifteenPercent);
+twentyFivePercent.addEventListener("pointerdown", selectTwentyFivePercent);
+fiftyPercent.addEventListener("pointerdown", selectFiftyPercent);*/
+
+
+//ATTEMPT TO DISABLE SUBMIT BUTTON UNTIL TOTAL AND NUMBER OF PEOPLE ARE INPUT
+submitButton.disabled = true;
+
+totalBill.addEventListener("input", event => {
+    const elem = event.target;
+    const valid = elem.value.length != 0;
+    if (valid && submitButton.disabled /*&& (numPeople.length != 0)*/) {
+        submitButton.disabled = false;
+    } else if (!valid && !submitButton.disabled) {
+        submitButton.disabled = true;
+    }
+});
+
+
+fivePercent.addEventListener("click", calcTotalTip(fivePercent));
+
+
 //ATTEMPT TO CALCULATE TIP AMOUNT BASED ON TOTAL BILL AND BUTTON SELECTION/INPUT
 let totalTip;
 function calcTotalTip(num) {
