@@ -1,61 +1,64 @@
+//DECLARE VARIABLES FOR ALL INPUT FIELDS
+const totalBill = document.getElementById("total-bill");
+const fivePercent = document.getElementById("5percent");
+const tenPercent = document.getElementById("10percent");
+const fifteenPercent = document.getElementById("15percent");
+const twentyFivePercent = document.getElementById("25percent");
+const fiftyPercent = document.getElementById("50percent");
+const customPercent = document.getElementById("custom-percent");
+const numPeople = document.getElementById("number-people");
 
-
-const totalBill = document.getElementById("total-bill").value;
-const fivePercent = document.getElementById("5percent").value;
-const tenPercent = document.getElementById("10percent").value;
-const fifteenPercent = document.getElementById("15percent").value;
-const twentyFivePercent = document.getElementById("25percent").value;
-const fiftyPercent = document.getElementById("50percent").value;
-const customPercent = document.getElementById("custom-percent").value;
-const numPeople = document.getElementById("number-people").value;
-
-//let test = parseInt(fivePercent) + parseInt(tenPercent);
-
-//console.log(test);
-
+//ATTEMPT TO CALCULATE TIP AMOUNT BASED ON TOTAL BILL AND BUTTON SELECTION/INPUT
 let totalTip;
-function calcTotalTip() {
-    if (document.getElementById('5percent').clicked == true) {
-        totalTip = (fivePercent / 100) * totalBill;
-        return totalTip;
-    } else if (document.getElementById('10percent').clicked == true) {
-        totalTip = (tenPercent / 100) * totalBill;
-        return totalTip;
-    } else if (document.getElementById('15percent').clicked == true) {
-        totalTip = (fifteenPercent / 100) * totalBill;
-        return totalTip;
-    } else if (document.getElementById('25percent').clicked == true) {
-        totalTip = (twentyFivePercent / 100) * totalBill;
-        return totalTip;
-    } else if (document.getElementById('50percent').clicked == true) {
-        totalTip = (fiftyPercent / 100) * totalBill;
-        return totalTip;
-    } else if (document.getElementById('custom-percent').clicked == true) {
-        totalTip = (customPercent / 100) * totalBill;
-        return totalTip;
-    }
+function calcTotalTip(num) {
+    totalTip = (num / 100) * totalBill;
+    return totalTip;
 };
 
 
+tenPercent.clicked = function() {
+        totalTip = (tenPercent / 100) * totalBill;
+        return totalTip;
+        };
+fifteenPercent.onclick = function() {
+        totalTip = (fifteenPercent / 100) * totalBill;
+        return totalTip;
+        };
+twentyFivePercent.onclick = function() {
+        totalTip = (twentyFivePercent / 100) * totalBill;
+        return totalTip;
+        };
+fiftyPercent.onclick = function() {
+        totalTip = (fiftyPercent / 100) * totalBill;
+        return totalTip;
+        };
+customPercent.onclick = function() {
+        totalTip = (customPercent / 100) * totalBill;
+        return totalTip;
+        };
 
+//CALCULATING TIP PER PERSON TO OUTPUT TO CORRESPONDING HTML FIELD
+let tipEach = document.getElementById("tip-each");
 let tipPerGuest;
 function tipPerPerson(totalTip) {
     tipPerGuest = totalTip / numPeople;
-    return document.getElementById("tip-each").write(tipPerGuest);
-    //return tipPerGuest;
+    tipEach.innerHTML = tipPerGuest;
 };
 
-
-
+//CALCULATING TOTAL PRICE PER PERSON TO OUTPUT TO CORRESPONDING HTML FIELD
+let totalEach = document.getElementById("total-each");
 let totalPerGuest;
 function totalPerPerson() {
     totalPerGuest = (totalBill / numPeople) + tipPerGuest;
-    return document.getElementById("total-each").write(totalPerGuest);
+    totalEach.innerHTML = totalPerGuest;
 };
 
-if (document.getElementById("submit").clicked == true) {
+//GROUPING FUNCTIONS INTO ONE
+function runCalc() {
     calcTotalTip();
     tipPerPerson(totalTip);
     totalPerPerson();
 };
 
+//ATTEMPT TO RUN SCRIPT ON CLICK OF THE SUBMIT BUTTON
+document.getElementById("submit").onclick = runCalc;

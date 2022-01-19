@@ -5,18 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="tipcalcstyle.css">
   
   <title>Frontend Mentor | Tip calculator app</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-    <link 
-  </style>
   <script src="tipcalc.js" async></script>
 </head>
-<body>
+<body id="body">
 <h1>Splitter</h1>
 
 <form action="#">
@@ -30,11 +26,11 @@
     <label for="select-tip">
       <span>Select Tip %</span>
     </label>
-    <input type="button" name="tip-percent" id="5percent" value="5%">
-    <input type="button" name="tip-percent" id="10percent" value="10%">
-    <input type="button" name="tip-percent" id="15percent" value="15%">
-    <input type="button" name="tip-percent" id="25percent" value="25%">
-    <input type="button" name="tip-percent" id="50percent" value="50%">
+    <input class="button" type="button" name="tip-percent" id="5percent" value="5%">
+    <input class="button" type="button" name="tip-percent" id="10percent" value="10%">
+    <input class="button" type="button" name="tip-percent" id="15percent" value="15%">
+    <input class="button" type="button" name="tip-percent" id="25percent" value="25%">
+    <input class="button" type="button" name="tip-percent" id="50percent" value="50%">
     <input type="text" name="tip-percent" id="custom-percent" placeholder="Custom">
   </fieldset>
 
@@ -47,21 +43,23 @@
 </fieldset>
 
 <fieldset>
+
 <label for="tip-amount">
   <span>Tip Amount <br> / person</span>
-</label> <br>
-
+</label>
+<br>
 <label for="total-amount">
   <span>Total <br> / person</span>
 </label>
-<output name="tip-each" id="tip-each"></output>
-<output name="total-each" id="total-each"></output>
-<br>
+<output class="calcs" name="tip-each" id="tip-each"></output>
+<output class="calcs" name="total-each" id="total-each"></output>
+
+</fieldset>
+
 <label for="reset">
   <input type="reset" name="reset" id="reset" value="Reset">
 </label>
 
-</fieldset>
 
 
   
