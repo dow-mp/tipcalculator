@@ -11,55 +11,22 @@ const numPeople = document.getElementById("number-people");
 const submitButton = document.getElementById("submit");
 const percentButtons = document.querySelectorAll(".button");
 
-//ATTEMPT TO CHANGE STYLE OF SELECTED PERCENT BUTTON
- function showSelectedPercent() { 
-    //let targ = item; 
-    .style.backgroundColor = "navy";
-    .style.color = "white";
-    .removeEventListener("pointerdown", selectFivePercent)
+//Change style of selected percentage button
+//***********ISSUE: RESET BUTTON DOES NOT RESET THE STYLING OF THESE BUTTONS***********
+function showSelectedPercent(event) { 
+    event.target.style.backgroundColor = "navy";
+    event.target.style.color = "white";
+    event.target.removeEventListener("pointerdown", showSelectedPercent);
+    //test code
+    if (event.target.click == "true") {
+        !event.target = "disabled"
+    //test code
+    }
 };
 
 percentButtons.forEach(item => {item.addEventListener("click", showSelectedPercent)});
-/*percentButtons.forEach(button => {
-    button.addEventListener("click", showSelectedPercent)
-});
 
-/*function selectFivePercent() {
-    fivePercent.style.backgroundColor = "navy";
-    fivePercent.style.color = "white";
-    fivePercent.removeEventListener("pointerdown", selectFivePercent)
-};
-
-function selectTenPercent() {
-    tenPercent.style.backgroundColor = "navy";
-    tenPercent.style.color = "white";
-    tenPercent.removeEventListener("pointerdown", selectTenPercent)
-};
-
-function selectFifteenPercent() {
-    fifteenPercent.style.backgroundColor = "navy";
-    fifteenPercent.style.color = "white";
-    fifteenPercent.removeEventListener("pointerdown", selectFifteenPercent)
-};
-
-function selectTwentyFivePercent() {
-    twentyFivePercent.style.backgroundColor = "navy";
-    twentyFivePercent.style.color = "white";
-    twentyFivePercent.removeEventListener("pointerdown", selectTwentyFivePercent)
-};
-
-function selectFiftyPercent() {
-    fiftyPercent.style.backgroundColor = "navy";
-    fiftyPercent.style.color = "white";
-    fiftyPercent.removeEventListener("pointerdown", selectFiftyPercent)
-};
-
-
-fivePercent.addEventListener("pointerdown", selectFivePercent);
-tenPercent.addEventListener("pointerdown", selectTenPercent);
-fifteenPercent.addEventListener("pointerdown", selectFifteenPercent);
-twentyFivePercent.addEventListener("pointerdown", selectTwentyFivePercent);
-fiftyPercent.addEventListener("pointerdown", selectFiftyPercent);*/
+//NEXT UP: DISABLE MULTIPLE PERCENTAGE BUTTONS FROM BEING SELECTED AT THE SAME TIME
 
 
 //ATTEMPT TO DISABLE SUBMIT BUTTON UNTIL TOTAL AND NUMBER OF PEOPLE ARE INPUT
@@ -76,7 +43,7 @@ totalBill.addEventListener("input", event => {
 });
 
 
-fivePercent.addEventListener("click", calcTotalTip(fivePercent));
+//fivePercent.addEventListener("click", calcTotalTip(fivePercent));
 
 
 //ATTEMPT TO CALCULATE TIP AMOUNT BASED ON TOTAL BILL AND BUTTON SELECTION/INPUT
@@ -88,23 +55,23 @@ function calcTotalTip(num) {
 
 
 tenPercent.clicked = function() {
-        totalTip = (tenPercent / 100) * totalBill;
+        totalTip = (tenPercent.value / 100) * totalBill.value;
         return totalTip;
         };
 fifteenPercent.onclick = function() {
-        totalTip = (fifteenPercent / 100) * totalBill;
+        totalTip = (fifteenPercent.value / 100) * totalBill.value;
         return totalTip;
         };
 twentyFivePercent.onclick = function() {
-        totalTip = (twentyFivePercent / 100) * totalBill;
+        totalTip = (twentyFivePercent.value / 100) * totalBill.value;
         return totalTip;
         };
 fiftyPercent.onclick = function() {
-        totalTip = (fiftyPercent / 100) * totalBill;
+        totalTip = (fiftyPercent.value / 100) * totalBill.value;
         return totalTip;
         };
 customPercent.onclick = function() {
-        totalTip = (customPercent / 100) * totalBill;
+        totalTip = (customPercent.value / 100) * totalBill.value;
         return totalTip;
         };
 
@@ -112,7 +79,7 @@ customPercent.onclick = function() {
 let tipEach = document.getElementById("tip-each");
 let tipPerGuest;
 function tipPerPerson(totalTip) {
-    tipPerGuest = totalTip / numPeople;
+    tipPerGuest = totalTip / numPeople.value;
     tipEach.innerHTML = tipPerGuest;
 };
 
@@ -120,7 +87,7 @@ function tipPerPerson(totalTip) {
 let totalEach = document.getElementById("total-each");
 let totalPerGuest;
 function totalPerPerson() {
-    totalPerGuest = (totalBill / numPeople) + tipPerGuest;
+    totalPerGuest = (totalBill.value / numPeople.value) + tipPerGuest;
     totalEach.innerHTML = totalPerGuest;
 };
 

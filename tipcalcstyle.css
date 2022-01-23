@@ -1,10 +1,2 @@
-.button {
-    background-color: cornflowerblue;
-    color: black;
-}
 
-.button::selection {
-    background-color: navy;
-    color: white;
-}
 
