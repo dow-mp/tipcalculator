@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <script src="https://kit.fontawesome.com/7089f52c85.js" crossorigin="anonymous"></script>
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="tipcalcstyle.css">
@@ -80,22 +81,28 @@
         <fieldset>
           <label for="number-people">
             <span>Number of People</span>
-            <input id="number-people" type="text" name="number-people">
+            <input id="number-people" type="text" name="number-people" class="num-people-input" placeholder="&#xf007">
           </label> 
         </fieldset>
       </div>
     
       <div class="total-container">
         <fieldset>
-          <label for="tip-amount">
-            <span>Tip Amount <br> / person</span>
-          </label>
-          <p id="tip"></p>
+          <div class="tip-row">
+            <label for="tip-amount">
+              <span>Tip Amount</span><br><span><span class="per">/ person</span>
+            </label>
+            <p id="tip">Tip</p>
+          </div>
 
-          <label for="total-amount">
-            <span>Total <br> / person</span>
-          </label>
-          <p id="total"></p>
+          <div class="total-row">
+            <label for="total-amount">
+              <span>Total</span><br><span><span class="per">/ person</span>
+            </label>
+            <p id="total">Total</p>
+          </div>
+
+          <button id="reset" class="reset-button" type="reset">Reset</button>
         </fieldset>
       </div>
 
