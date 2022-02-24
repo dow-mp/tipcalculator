@@ -7,66 +7,106 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="tipcalcstyle.css">
   
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Source+Code+Pro:wght@500&display=swap" rel="stylesheet">
+
   <title>Frontend Mentor | Tip calculator app</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <script src="tipcalc.js" async></script>
 </head>
+
+<html>
 <body id="body">
-<h1>Splitter</h1>
-
-<form action="#">
-  <fieldset>
-  <label for="total">
-    <span>Bill</span><br>
-    <input type="text" name="total-bill" id="total-bill" placeholder="$">
-  </label>
-
-  <fieldset>
-    <label for="select-tip">
-      <span>Select Tip %</span>
-    </label>
-    <input class="button" type="button" name="tip-percent" id="5percent" value="5%">
-    <input class="button" type="button" name="tip-percent" id="10percent" value="10%">
-    <input class="button" type="button" name="tip-percent" id="15percent" value="15%">
-    <input class="button" type="button" name="tip-percent" id="25percent" value="25%">
-    <input class="button" type="button" name="tip-percent" id="50percent" value="50%">
-    <input type="text" name="tip-percent" id="custom-percent" placeholder="Custom">
-  </fieldset>
-
-  <label for="number-people">
-    <span>Number of People</span>
-    <input type="text" name="number-people" id="number-people">
-  </label>  
-
-  <input type="submit" name="submit" id="submit" value="Calculate">
-</fieldset>
-
-<fieldset>
-
-<label for="tip-amount">
-  <span>Tip Amount <br> / person</span>
-</label>
-<br>
-<label for="total-amount">
-  <span>Total <br> / person</span>
-</label>
-<output class="calcs" name="tip-each" id="tip-each"></output>
-<output class="calcs" name="total-each" id="total-each"></output>
-
-</fieldset>
-
-<label for="reset">
-  <input type="reset" name="reset" id="reset" value="Reset">
-</label>
-
-
-
   
-  </form>
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Dow-mp</a>.
+   <!-- container for entire content of page -->
+  <div class="flex-container">
+    <h1 id="title">Spli<br>tter</h1>
+
+
+  <!-- container for everything except title SPLITTER -->
+  <div class="full-container">
+    <form action="#">
+
+      <!-- div for bill label and input only -->
+      <div class="bill-container">
+        <fieldset>
+          <label for="total-bill">
+            <span>Bill</span><br>
+            <input type="text" name="total-bill" id="total-bill" placeholder="$" class="total-bill-input">
+          </label>
+        </fieldset>
+      </div>
+
+      <div class="percent-field">
+        <fieldset> 
+          <label for="select-tip">
+            <span>Select Tip %</span>
+          </label>
+      
+        <!-- TRIAL CODE -->
+        <div class="percent-buttons">
+          <button class="radio" type="button" name="tip-percent" id="5percent">5%</button>
+          <button class="radio" type="button" name="tip-percent" id="10percent"">10%</button>
+          <button class="radio" type="button" name="tip-percent" id="15percent">15%</button>
+          <button class="radio" type="button" name="tip-percent" id="25percent">25%</button>
+          <button class="radio" type="button" name="tip-percent" id="50percent">50%</button>
+          <input id="custom-percent" type="text" name="tip-percent" placeholder="Custom">
+        </div>
+        <!-- END TRIAL CODE -->  
+        </fieldset>  
+      </div>
+      
+      <!-- 
+        <label class="percent" for="5percent"><input class="radio" type="radio" name="tip-percent" id="5percent" value="5%" checked="checked">5%</label>
+
+        <label class="percent" for="10percent"><input class="radio" type="radio" name="tip-percent" id="10percent" value="10%">10%</label>
+
+        <label class="percent" for="15percent"><input class="radio" type="radio" name="tip-percent" id="15percent" value="15%">15%</label>
+
+        <label class="percent" for="25percent"><input class="radio" type="radio" name="tip-percent" id="25percent" value="25%">25%</label>
+
+        <label class="percent" for="50percent"><input class="radio" type="radio" name="tip-percent" id="50percent" value="50%">50%</label>
+
+        <input type="text" name="tip-percent" id="custom-percent" placeholder="Custom">
+      </fieldset> 
+
+      <label for="number-people">
+        <span>Number of People</span>
+        <input type="text" name="number-people" id="number-people">
+      </label>
+      -->
+      <div class="people">
+        <fieldset>
+          <label for="number-people">
+            <span>Number of People</span>
+            <input id="number-people" type="text" name="number-people">
+          </label> 
+        </fieldset>
+      </div>
+    
+      <div class="total-container">
+        <fieldset>
+          <label for="tip-amount">
+            <span>Tip Amount <br> / person</span>
+          </label>
+          <p id="tip"></p>
+
+          <label for="total-amount">
+            <span>Total <br> / person</span>
+          </label>
+          <p id="total"></p>
+        </fieldset>
+      </div>
+
+    </form>
+
   </div>
+
+  <div class="attribute">
+    <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Dow-mp</a>.</p>
+  </div>
+
 </body>
 </html>

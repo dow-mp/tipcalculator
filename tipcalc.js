@@ -9,25 +9,26 @@ const customPercent = document.getElementById("custom-percent");
 const numPeople = document.getElementById("number-people");
 
 const submitButton = document.getElementById("submit");
-const percentButtons = document.querySelectorAll(".button");
+const percentButtons = document.querySelectorAll(".radio");
 
 //Change style of selected percentage button
 //***********ISSUE: RESET BUTTON DOES NOT RESET THE STYLING OF THESE BUTTONS***********
 function showSelectedPercent(event) { 
     event.target.style.backgroundColor = "navy";
     event.target.style.color = "white";
-    event.target.removeEventListener("pointerdown", showSelectedPercent);
+    event.target.removeEventListener("click", showSelectedPercent);
     //test code
-    if (event.target.click == "true") {
-        !event.target = "disabled"
-    //test code
-    }
-};
+    /*if (event.target.click == "true") {
+        !event.target = "disabled"*/
+    // test code
+    };
 
 percentButtons.forEach(item => {item.addEventListener("click", showSelectedPercent)});
 
 //NEXT UP: DISABLE MULTIPLE PERCENTAGE BUTTONS FROM BEING SELECTED AT THE SAME TIME
+if percentButtons.forEach(item=>(
 
+))
 
 //ATTEMPT TO DISABLE SUBMIT BUTTON UNTIL TOTAL AND NUMBER OF PEOPLE ARE INPUT
 submitButton.disabled = true;

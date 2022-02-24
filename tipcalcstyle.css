@@ -1,2 +1,166 @@
+/* mobile first design */
+
+:root {
+    --ltblue: #c5e4e7;
+    --white: #ffffff;
+    --forest-green: #00474b;
+    --ltgray: #f3f8fb;
+    --turqoise: #27c2ad;
+    --paleblue: #f0f6f9;
+    --input-font: #94a9ab;
+}
+
+* {
+     box-sizing: border-box;
+}
+
+body {
+    background-color: var(--ltblue);
+}
+
+/* SPLITTER header styling */
+#title {
+    background-color: var(--ltblue);
+    text-transform: uppercase;
+    margin: 0 auto;
+    padding: 10px;
+    text-align: center;
+    font-family: 'Source Code Pro', monospace;
+    letter-spacing: 8px;
+    font-size: 1.25rem;
+    line-height: 25px;
+    color: var(--forest-green)
+}
+
+/* font styling for all labels */
+label {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 0.75rem;
+    color: var(--forest-green);
+}
+
+/* font styling for labels within forest green div */
+.total-container>fieldset>label {
+    color: var(--white);
+}
+
+/* remove borders around fieldsets */
+fieldset {
+    border: none;
+}
+
+.full-container {
+    background-color: var(--white);
+    border-radius: 15px 15px 0 0;
+    border: none;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: space-around;
+    height: 90vh;
+    padding: 0;
+    margin: 0 -7px;
+    margin-bottom: -7px;
+}
+
+.bill-container {
+    padding: 0;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.total-bill-input {
+    width: 90vw;
+    margin: 5px auto;
+    padding: 10px 4px;
+    align-items: center;
+    background-color: var(--paleblue);
+    color: var(--input-font);
+    border: none;
+    border-radius: 5px;
+    justify-self: stretch;
+    align-self: center;
+    font-size: 1.25rem;
+}
+
+.bill {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.bill-container>label>span, .bill-container>input {
+    margin: 0 10px;
+}
+
+.total-container {
+    background-color: var(--forest-green);
+    border: none;
+    /* height: 20vh;
+    width: 20vw; */
+}
+
+.percent-field {
+    display: flex;
+    flex-flow: row rap;
+
+}
 
 
+/* .radio {
+    display:block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.01;
+    z-index: 100;
+} */
+
+.percent:hover, .percent:active, .radio:checked, input[type='radio']:checked + label:after {
+    background-color: navy;
+    color: white;
+}
+
+.percent {
+    padding: 5px;
+    border: 1px solid #CCC;
+    cursor: pointer;
+    z-index: 90;
+    margin: 5px;
+  }
+
+.number-people, .submit, .percentfield {
+    margin: 20px;
+}
+
+.attribute {
+    display: none;
+}
+
+/* desktop design */
+@media screen and (min-width: 769px) {
+    body {
+        background-color: var(--ltblue);
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .flex-container {
+        background-color: var(--white);
+        height: 80vh;
+        width: 90vw;
+        margin: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+    }
+
+}
